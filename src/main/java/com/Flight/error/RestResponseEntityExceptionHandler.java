@@ -1,6 +1,6 @@
-package com.Department.error;
+package com.Flight.error;
 
-import com.Department.entity.ErrorMessage;
+import com.Flight.entity.ErrorMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -13,8 +13,8 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ResponseStatus
 public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(DepartmentNotFoundException.class)
-    public ResponseEntity <ErrorMessage> departmentNotFoundException(DepartmentNotFoundException exception, WebRequest request)
+    @ExceptionHandler(FlightNotFoundException.class)
+    public ResponseEntity <ErrorMessage> flightNotFoundException(FlightNotFoundException exception, WebRequest request)
     {
          ErrorMessage message = new ErrorMessage(HttpStatus.NOT_FOUND,
                  exception.getMessage());

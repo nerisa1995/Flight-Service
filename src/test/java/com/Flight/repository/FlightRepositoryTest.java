@@ -1,5 +1,5 @@
-package com.Department.repository;
-import com.Department.entity.Department;
+package com.Flight.repository;
+import com.Flight.entity.Flight;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,20 +9,20 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
-class DepartmentRepositoryTest {
+class FlightRepositoryTest {
 
     @Autowired
-    private DepartmentRepository departmentRepository;
+    private FlightRepository flightRepository;
 
     @Autowired
     private TestEntityManager entityManager;
     @BeforeEach
     void setUp() {
-        Department department =
-                Department.builder()
-                        .departmentName("Mechanical Engineering")
-                        .departmentCode("ME-011")
-                        .departmentAddress("Tirana")
+        Flight department =
+                Flight.builder()
+                        .flightDestination("Tirana")
+                        .flightCode("ME-011")
+                        .flightDeparture("Milano")
                         .build();
 
         entityManager.persist(department);
@@ -31,7 +31,7 @@ class DepartmentRepositoryTest {
     @Test
     public void whenFindById_thenReturnDepartment(){
 
-        Department department = departmentRepository.findById(1L).get();
-        assertEquals(department.getDepartmentName(), "Mechanical Engineering");
+        Flight flight = flightRepository.findById(1L).get();
+        assertEquals(flight.getFlightDestination(), "Tirana");
     }
 }

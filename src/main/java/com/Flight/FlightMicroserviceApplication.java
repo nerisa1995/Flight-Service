@@ -1,13 +1,14 @@
-package com.Department;
+package com.Flight;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DepartmentMicroserviceApplication {
+public class FlightMicroserviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DepartmentMicroserviceApplication.class, args);
+		SpringApplication.run(FlightMicroserviceApplication.class, args);
 	}
+
 
 }

@@ -1,4 +1,4 @@
-package com.Department.entity;
+package com.Flight.entity;
 
 import com.fasterxml.jackson.annotation.JsonTypeId;
 import lombok.AllArgsConstructor;
@@ -11,21 +11,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import java.util.Calendar;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Department {
+public class Flight {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long departmentId;
-    @NotBlank(message = "Please add Department Name")
-    private String departmentName;
-    private String departmentAddress;
-    private String departmentCode;
-
-
+    private Long flightId;
+    @NotBlank(message = "Please add Flight Destination")
+    private String flightDestination;
+    private String flightDeparture;
+    private String flightCode;
+   // private Calendar flightDepartureTime;
 
 }
