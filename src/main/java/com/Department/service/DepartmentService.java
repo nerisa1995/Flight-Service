@@ -1,7 +1,7 @@
-package com.nerisadaily.testNerisa.tutorial.service;
+package com.Department.service;
 
-import com.nerisadaily.testNerisa.tutorial.entity.Department;
-import com.nerisadaily.testNerisa.tutorial.error.DepartmentNotFoundException;
+import com.Department.entity.Department;
+import com.Department.error.DepartmentNotFoundException;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ public interface DepartmentService {
 
     public Department saveDepartment(Department department);
 
-    public List<Department> fetchDepartmentList();
+    public List<Department> getDepartmentList();
 
-    public Department fetchDepartment(Long departmentId) throws DepartmentNotFoundException;
+    public Department getDepartmentById(Long departmentId) throws DepartmentNotFoundException;
 
     public void deleteDepartmentById(Long departmentId);
 

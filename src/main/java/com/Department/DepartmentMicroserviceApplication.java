@@ -1,13 +1,13 @@
-package com.nerisadaily.testNerisa.tutorial;
+package com.Department;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TestNerisaApplication {
+public class DepartmentMicroserviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TestNerisaApplication.class, args);
+		SpringApplication.run(DepartmentMicroserviceApplication.class, args);
 	}
 
 }

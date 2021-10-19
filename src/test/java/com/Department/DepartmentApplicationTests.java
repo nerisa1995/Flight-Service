@@ -1,10 +1,10 @@
-package com.nerisadaily.testNerisa.tutorial;
+package com.Department;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TestNerisaApplicationTests {
+class DepartmentApplicationTests {
 
 
 

@@ -1,4 +1,4 @@
-package com.nerisadaily.testNerisa.tutorial.controller;
+package com.Department.controller;
 
 
 import org.springframework.beans.factory.annotation.Value;

@@ -1,8 +1,7 @@
-package com.nerisadaily.testNerisa.tutorial.repository;
+package com.Department.repository;
 
-import com.nerisadaily.testNerisa.tutorial.entity.Department;
+import com.Department.entity.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository

@@ -1,4 +1,4 @@
-package com.nerisadaily.testNerisa.tutorial.entity;
+package com.Department.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

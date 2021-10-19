@@ -1,8 +1,8 @@
-package com.nerisadaily.testNerisa.tutorial.service;
+package com.Department.service;
 
-import com.nerisadaily.testNerisa.tutorial.entity.Department;
-import com.nerisadaily.testNerisa.tutorial.error.DepartmentNotFoundException;
-import com.nerisadaily.testNerisa.tutorial.repository.DepartmentRepository;
+import com.Department.entity.Department;
+import com.Department.error.DepartmentNotFoundException;
+import com.Department.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,23 +23,15 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public List<Department> fetchDepartmentList() {
+    public List<Department> getDepartmentList() {
         return departmentRepository.findAll();
     }
 
     @Override
-    public Department fetchDepartment(Long departmentId) throws DepartmentNotFoundException {
-//        Optional<Department> result = departmentRepository.findById(departmentId);
-//        Department theDepartment = null;
-//        if(result.isPresent()){
-//            theDepartment = result.get();
-//        }
-//        return theDepartment;
-//    }
-
+    public Department getDepartmentById(Long departmentId) throws DepartmentNotFoundException {
         Optional<Department> department =
                 departmentRepository.findById(departmentId);
-        if(!department.isPresent()){
+        if (!department.isPresent()) {
             throw new DepartmentNotFoundException("Department Not Avaiable");
         }
         return department.get();
@@ -52,20 +44,18 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public Department updateDepartment(Long departmentId, Department department) {
-        //First we get the department which is already avaiable in the database
         Department depDB = departmentRepository.findById(departmentId).get();
-        //After we get the particular object, here we check if there are any values. If there are any values then we update
-        if(Objects.nonNull(department.getDepartmentName())&&
-                !"".equalsIgnoreCase(department.getDepartmentName())){
+        if (Objects.nonNull(department.getDepartmentName()) &&
+                !"".equalsIgnoreCase(department.getDepartmentName())) {
             depDB.setDepartmentName(department.getDepartmentName());
         }
-        if(Objects.nonNull(department.getDepartmentAddress())&&
-                !"".equalsIgnoreCase(department.getDepartmentAddress())){
+        if (Objects.nonNull(department.getDepartmentAddress()) &&
+                !"".equalsIgnoreCase(department.getDepartmentAddress())) {
             depDB.setDepartmentAddress(department.getDepartmentAddress());
         }
 
-        if(Objects.nonNull(department.getDepartmentCode())&&
-                !"".equalsIgnoreCase(department.getDepartmentCode())){
+        if (Objects.nonNull(department.getDepartmentCode()) &&
+                !"".equalsIgnoreCase(department.getDepartmentCode())) {
             depDB.setDepartmentCode(department.getDepartmentCode());
         }
 
@@ -74,7 +64,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public Department getDepartmentByName(String departmentName) {
-         return departmentRepository.findByDepartmentNameIgnoreCase(departmentName);
+        return departmentRepository.findByDepartmentNameIgnoreCase(departmentName);
 
     }
 }

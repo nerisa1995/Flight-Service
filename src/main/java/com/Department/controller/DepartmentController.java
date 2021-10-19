@@ -1,8 +1,8 @@
-package com.nerisadaily.testNerisa.tutorial.controller;
+package com.Department.controller;
 
-import com.nerisadaily.testNerisa.tutorial.entity.Department;
-import com.nerisadaily.testNerisa.tutorial.error.DepartmentNotFoundException;
-import com.nerisadaily.testNerisa.tutorial.service.DepartmentService;
+import com.Department.entity.Department;
+import com.Department.error.DepartmentNotFoundException;
+import com.Department.service.DepartmentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,15 +27,15 @@ public class DepartmentController {
     }
 
     @GetMapping("/departments")
-    public List<Department> fetchDepartmentList() {
+    public List<Department> getDepartmentList() {
         LOGGER.info("Inside fetchDepartmentList of DepartmentController");
-        return departmentService.fetchDepartmentList();
+        return departmentService.getDepartmentList();
     }
 
     @GetMapping("/departments/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
+    public Department getDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
 
-        return departmentService.fetchDepartment(departmentId);
+        return departmentService.getDepartmentById(departmentId);
     }
 
     @DeleteMapping("/departments/{id}")
@@ -44,15 +44,17 @@ public class DepartmentController {
         departmentService.deleteDepartmentById(departmentId);
         return "Deleted departmentId successfully " + departmentId;
     }
+
     @PutMapping("/departments/{id}")
     public Department updateDepartment(@PathVariable("id") Long departmentId,
-                                       @RequestBody Department department){
+                                       @RequestBody Department department) {
         return departmentService.updateDepartment(departmentId, department);
     }
+
     //Fetch data by name
     @GetMapping("/departments/name/{name}")
-    public Department getDepartmentByName(@PathVariable("name") String departmentName){
-       return departmentService.getDepartmentByName(departmentName);
+    public Department getDepartmentByName(@PathVariable("name") String departmentName) {
+        return departmentService.getDepartmentByName(departmentName);
 
     }
 

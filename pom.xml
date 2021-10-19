@@ -8,11 +8,11 @@
 		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.nerisadaily</groupId>
-	<artifactId>test-nerisa</artifactId>
+	<groupId>com.Department</groupId>
+	<artifactId>Department-project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>test-nerisa</name>
-	<description>TestSpringBoot</description>
+	<name>department-project</name>
+	<description>DepartmentProject</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

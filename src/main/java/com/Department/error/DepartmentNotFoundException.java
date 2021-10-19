@@ -1,4 +1,4 @@
-package com.nerisadaily.testNerisa.tutorial.error;
+package com.Department.error;
 
 public class DepartmentNotFoundException extends Exception{
 

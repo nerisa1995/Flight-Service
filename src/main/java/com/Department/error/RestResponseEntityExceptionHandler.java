@@ -1,7 +1,6 @@
-package com.nerisadaily.testNerisa.tutorial.error;
+package com.Department.error;
 
-import com.nerisadaily.testNerisa.tutorial.entity.ErrorMessage;
-import org.apache.coyote.Response;
+import com.Department.entity.ErrorMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

@@ -1,9 +1,8 @@
-package com.nerisadaily.testNerisa.tutorial.service;
+package com.Department.service;
 
-import com.nerisadaily.testNerisa.tutorial.entity.Department;
-import com.nerisadaily.testNerisa.tutorial.repository.DepartmentRepository;
+import com.Department.entity.Department;
+import com.Department.repository.DepartmentRepository;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -30,7 +29,6 @@ class DepartmentServiceTest {
                         .departmentCode("Tirana-01")
                         .departmentId(1L)
                         .build();
-        //Whenever you call this particular method findByDepartmentNameIgnoreCase() I want this particular Department as a value back
         Mockito.when(departmentRepository.findByDepartmentNameIgnoreCase("IT"))
                 .thenReturn(department);
     }
@@ -40,7 +38,6 @@ class DepartmentServiceTest {
     public void whenValidDepartmentName_thenDepartmentShouldFound(){
         String departmentName = "IT";
         Department found = departmentService.getDepartmentByName(departmentName);
-
         assertEquals(departmentName, found.getDepartmentName());
 
 

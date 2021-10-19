@@ -1,4 +1,4 @@
-package com.nerisadaily.testNerisa.tutorial.entity;
+package com.Department.entity;
 
 import com.fasterxml.jackson.annotation.JsonTypeId;
 import lombok.AllArgsConstructor;
@@ -18,11 +18,9 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 @Builder
 public class Department {
-    //departmentId is primary key
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long departmentId;
-
     @NotBlank(message = "Please add Department Name")
     private String departmentName;
     private String departmentAddress;

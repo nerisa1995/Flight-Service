@@ -1,6 +1,5 @@
-package com.nerisadaily.testNerisa.tutorial.repository;
-
-import com.nerisadaily.testNerisa.tutorial.entity.Department;
+package com.Department.repository;
+import com.Department.entity.Department;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

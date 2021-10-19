@@ -1,8 +1,7 @@
-package com.nerisadaily.testNerisa.tutorial.controller;
+package com.Department.controller;
 
-import com.nerisadaily.testNerisa.tutorial.entity.Department;
-import com.nerisadaily.testNerisa.tutorial.error.DepartmentNotFoundException;
-import com.nerisadaily.testNerisa.tutorial.service.DepartmentService;
+import com.Department.entity.Department;
+import com.Department.service.DepartmentService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -11,9 +10,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcBuilder;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -49,7 +45,6 @@ class DepartmentControllerTest {
 
         Mockito.when(departmentService.saveDepartment(inputDepartment))
                 .thenReturn(department);
-
         mockMvc.perform(post("/departments")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\n" +
@@ -63,9 +58,9 @@ class DepartmentControllerTest {
 
     @Test
     void fetchDepartmentById() throws Exception {
-        Mockito.when(departmentService.fetchDepartment(1L))
+        Mockito.when(departmentService.getDepartmentById(1L))
                 .thenReturn(department);
-
+        // here we perform the get operation
         mockMvc.perform(get("/departments/1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -74,16 +69,6 @@ class DepartmentControllerTest {
 
     }
 
-//    @Test
-//    void fetchDepartmentById() throws Exception {
-//        Mockito.when(departmentService.getDepartmentByName()DepartmentById(1L))
-//                .thenReturn(department);
-//
-//        mockMvc.perform(get("/departments/1")
-//                        .contentType(MediaType.APPLICATION_JSON))
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath("$.departmentName").
-//                        value(department.getDepartmentName()));
-//    }
+
 
 }
